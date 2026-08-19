@@ -2687,7 +2687,6 @@ void HistoryItem::applySentMessage(const MTPDmessage &data) {
 	setPostAuthor(data.vpost_author().value_or_empty());
 	contributeToSlowmode(data.vdate().v);
 	if (isRegular()
-		&& !isLocalUpdateMedia()
 		&& (topicRootId() != wasTopicRootId
 			|| sublistPeerId() != wasSublistPeerId)) {
 		if (wasTypes) {
