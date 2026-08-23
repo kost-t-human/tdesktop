@@ -458,7 +458,7 @@ if customRunCommand:
 stage('patches', """
     git clone https://github.com/desktop-app/patches.git
     cd patches
-    git checkout d844b27bd6772774304bcf104fcd3ffec375611e
+    git checkout e431ca01691520c31aeae6a97bc83f5ed0b6a194
 mac:
     git clone https://github.com/desktop-app/qt6_highsierra_patches.git qt6_highsierra
     cd qt6_highsierra
@@ -1293,6 +1293,7 @@ mac:
         --enable-encoder=aac \
         --enable-encoder=libopus \
         --enable-encoder=libopenh264 \
+        --enable-encoder=libvpx_vp9 \
         --enable-encoder=pcm_s16le \
         --enable-filter=atempo \
         --enable-parser=aac \
@@ -1319,7 +1320,8 @@ mac:
         --enable-muxer=mp4 \
         --enable-muxer=ogg \
         --enable-muxer=opus \
-        --enable-muxer=wav
+        --enable-muxer=wav \
+        --enable-muxer=webm
     }
 
     configureFFmpeg arm64
